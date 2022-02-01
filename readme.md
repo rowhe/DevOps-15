@@ -42,10 +42,11 @@ root@vagrant:# mdadm --create --verbose /dev/md0 -l 1 -n 2 /dev/sdb1 /dev/sdc1
 
 7. Соберите `mdadm` RAID0 на второй паре маленьких разделов.
 
+
 ```bash 
-root@vagrant:# root@vagrant:# fdisk /dev/sdb
-root@vagrant:# root@vagrant:# fdisk /dev/sdc
-root@vagrant:# root@vagrant:# mdadm --create --verbose /dev/md1 -l 0 -n 2 /dev/sdb2 /dev/sdc2
+root@vagrant:# fdisk /dev/sdb
+root@vagrant:# fdisk /dev/sdc
+root@vagrant:# mdadm --create --verbose /dev/md1 -l 0 -n 2 /dev/sdb2 /dev/sdc2
 ```
 
 * Добавляем запись о наших дисках в /etc/mdadm/mdadm.conf:
