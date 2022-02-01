@@ -37,15 +37,15 @@
 ```bash
 root@vagrant:# sfdisk -d /dev/sdb > p_table
 root@vagrant:# sfdisk /dev/sdc < p_table
-root@vagrant:# mdadm --create --force /dev/md127 -l 1 -n 2 /dev/sdb1 /dev/sdc1
+root@vagrant:# mdadm --create --verbose /dev/md0 -l 1 -n 2 /dev/sdb1 /dev/sdc1
 ```
 
 7. Соберите `mdadm` RAID0 на второй паре маленьких разделов.
 
 ```bash 
-root@vagrant:# root@vargant:# fdisk /dev/sdb
-root@vagrant:# root@vargant:# fdisk /dev/sdc
-root@vagrant:# root@vargant:# mdadm --creare --verbose /dev/md1 -l 1 -n 2 /dev/sdb2 /dev/sdc2
+root@vagrant:# root@vagrant:# fdisk /dev/sdb
+root@vagrant:# root@vagrant:# fdisk /dev/sdc
+root@vagrant:# root@vagrant:# mdadm --create --verbose /dev/md1 -l 1 -n 2 /dev/sdb2 /dev/sdc2
 ```
 
 * Добавляем запись о наших дисках в /etc/mdadm/mdadm.conf:
