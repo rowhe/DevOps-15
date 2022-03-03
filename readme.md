@@ -117,7 +117,7 @@ root@vagrant:~#
 ```
 
 3. Проверьте открытые TCP порты в Ubuntu, какие протоколы и приложения используют эти порты? Приведите несколько примеров.
-* Проверить открытые TCP порты и использующие их программы можно командой `ss -tpan` или: </br>
+* Проверить открытые TCP порты и использующие их программы можно командой `ss -tpan` или `netstat -npl --inet`: </br>
 ```commandline
 root@vagrant:~# root@vagrant:~# ss -tpan
 State         Recv-Q         Send-Q                 Local Address:Port                 Peer Address:Port         Process
@@ -129,6 +129,18 @@ LISTEN        0              128                             [::]:22            
 LISTEN        0              511                             [::]:80                           [::]:*             users:(("nginx",pid=713,fd=7),("nginx",pid=712,fd=7),("nginx",pid=711,fd=7))
 root@vagrant:~#
 ```
+```commandline
+root@vagrant:~# root@vagrant:~# netstat -npl --inet
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      696/sshd: /usr/sbin
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      711/nginx: master p
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      617/systemd-resolve
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           617/systemd-resolve
+udp        0      0 10.0.2.15:68            0.0.0.0:*                           1356/systemd-networ
+root@vagrant:~#
+```
+
 * Список стандартных сервисов с используемыми ими портами можно найти в файле `/etc/services`
 * Актуальную сетевую активность можно проверить при помощи `nethogs`: </br>
 ```commandline
