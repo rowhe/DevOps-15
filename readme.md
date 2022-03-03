@@ -103,6 +103,19 @@ network:
 ip route add 8.8.8.8 via 10.0.2.2 dev eth0
 ```
 
+* Проверяем таблицу маршрутизации: </br>
+```commandline
+root@vagrant:~# ip route show
+default via 10.0.2.2 dev eth0
+8.8.8.8 via 10.0.2.2 dev eth0
+10.0.2.0 via 192.168.2.16 dev dummy0
+10.0.2.0/24 dev eth0 proto kernel scope link src 10.0.2.15
+10.0.2.2 dev eth0 proto dhcp scope link src 10.0.2.15 metric 100
+192.168.2.0/24 dev dummy0 proto kernel scope link src 192.168.2.16
+root@vagrant:~#
+
+```
+
 4. Проверьте открытые TCP порты в Ubuntu, какие протоколы и приложения используют эти порты? Приведите несколько примеров.
 * Проверить открытые TCP порты и использующие их программы можно командой `ss -tpan` или: </br>
 ```commandline
