@@ -265,6 +265,8 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 262144 byt
 0 packets dropped by kernel
 root@netology1:~# 
 ```
+* Копируем с ubunty на windows для просмотра в WinShark
+![winscp](img/winscp.JPG)
 * Открываем в WinShark
 ![pcap](img/pcap.JPG)
 
@@ -272,6 +274,31 @@ root@netology1:~#
 ## Задание для самостоятельной отработки (необязательно к выполнению)
 
 8*. Просканируйте хост scanme.nmap.org. Какие сервисы запущены?
+```commandline
+root@netology1:~# nmap -Pn scanme.nmap.org
+Starting Nmap 7.80 ( https://nmap.org ) at 2022-03-10 16:01 UTC
+Stats: 0:00:56 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 58.13% done; ETC: 16:02 (0:00:40 remaining)
+Stats: 0:00:56 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 58.43% done; ETC: 16:02 (0:00:40 remaining)
+Stats: 0:02:00 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 97.88% done; ETC: 16:03 (0:00:03 remaining)
+Stats: 0:02:03 elapsed; 0 hosts completed (1 up), 1 undergoing SYN Stealth Scan
+SYN Stealth Scan Timing: About 99.55% done; ETC: 16:03 (0:00:01 remaining)
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (2.9s latency).
+Other addresses for scanme.nmap.org (not scanned): 2600:3c01::f03c:91ff:fe18:bb2f
+Not shown: 996 closed ports
+PORT      STATE SERVICE
+22/tcp    open  ssh
+80/tcp    open  http
+9929/tcp  open  nping-echo
+31337/tcp open  Elite
+
+Nmap done: 1 IP address (1 host up) scanned in 127.23 seconds
+root@netology1:~#
+
+```
 
 9*. Установите и настройте фаервол ufw на web-сервер из задания 3. Откройте доступ снаружи только к портам 22,80,443
 
