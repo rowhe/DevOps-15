@@ -76,7 +76,6 @@ while True:
 ```
 * Вывод такого скрипта выглядит следующим образом:
 ```bash
-vagrant@netology1:~/git/DevOps-15/scripts$ nano 5.py
 vagrant@netology1:~/git/DevOps-15/scripts$ ./5.py
 drive.google.com 142.251.1.194
 [ERROR] ['mail.google.com'] IP mismatch: old ip: ['108.177.14.83'] new ip 108.177.14.19
